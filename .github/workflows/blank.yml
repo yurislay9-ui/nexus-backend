@@ -1,13 +1,24 @@
-- name: Descargar desde Hugging Face
-  run: |
-    pip install huggingface_hub
-    python << 'EOF'
-    from huggingface_hub import hf_hub_download
-    hf_hub_download(
-      repo_id='prithivMLmods/SmolLM2-135M-F32-GGUF',
-      filename='SmolLM2-135M-Instruct.Q3_K_S.gguf',
-      local_dir='.'
-    )
-    print("Descarga completada")
-    EOF
-    ls -lh *.gguf
+name: Descargar Modelo IA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar desde Hugging Face
+        run: |
+          echo "Iniciando descarga del modelo..."
+          wget -O modelo.gguf "https://huggingface.co/prithivMLmods/SmolLM2-135M-F32-GGUF/resolve/main/SmolLM2-135M-Instruct.Q3_K_S.gguf"
+          echo "Descarga finalizada."
+
+      - name: Crear Release y Subir Modelo
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Modelo Descargado ${{ github.run_number }}
+          files: modelo.gguf
