@@ -1,20 +1,35 @@
 {
-  "server_url": "https://tu-actual-ngrok.ngrok-free.app", 
-  "status": "online",
-  "maintenance_mode": false,
-  "app_version": {
-    "min_version": "2.3.0",
-    "latest_apk_url": "https://github.com/yurislay9-ui/nexus-backend/releases/latest/download/nexus.apk"
+  "serverUrl": "https://TU-URL-NGROK.ngrok-free.app",
+  "minAppVersion": "2.3.0",
+  "maintenanceMode": false,
+  "announcement": null,
+
+  "payment_config": {
+    "wallet_address": "TU_DIRECCION_TRON_TRC20_AQUI",
+    "usdt_contract": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+    "required_confirmations": 20
   },
-  "whatsapp_config": {
-    "min_version": "2.24.1",
-    "update_required": false,
-    "fix_apk_url": "https://github.com/yurislay9-ui/nexus-backend/releases/download/v1.1/whatsapp-fix.apk",
-    "input_field_id": "com.whatsapp:id/entry",
-    "send_button_id": "com.whatsapp:id/send"
-  },
+
   "webhooks": {
-    "license": "https://tu-actual-ngrok.ngrok-free.app/webhook/license",
-    "payment": "https://tu-actual-ngrok.ngrok-free.app/webhook/payment"
+    "nexus": "https://TU-URL-NGROK.ngrok-free.app/webhook/nexus",
+    "license": "https://TU-URL-NGROK.ngrok-free.app/webhook/license",
+    "payment": "https://TU-URL-NGROK.ngrok-free.app/webhook/payment"
+  },
+
+  "ai_model": {
+    "download_url": "https://github.com/TU-USUARIO/nexus-backend/releases/latest/download/modelo.gguf",
+    "version": "1.0.3",
+    "filename": "modelo.gguf",
+    "size_mb": 84
+  },
+
+  "github_updates": {
+    "app_update_url": "https://api.github.com/repos/TU-USUARIO/nexus-app/releases/latest",
+    "whatsapp_fix_url": "https://api.github.com/repos/TU-USUARIO/nexus-whatsapp-fix/releases/latest"
+  },
+
+  "whatsapp_config": {
+    "minVersion": "2.24.1",
+    "updateRequired": false
   }
 }
