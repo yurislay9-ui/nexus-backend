@@ -1,0 +1,8 @@
+{
+  "server_url": "https://tu-pinggy...",
+  "status": "online",
+  "ui_config": {
+    "input_field_id": "com.whatsapp:id/entry",
+    "send_button_id": "com.whatsapp:id/send"
+  }
+}
