@@ -4,6 +4,9 @@
   "maintenanceMode": false,
   "announcement": null,
 
+  "google_client_id": "TU_CLIENT_ID_GOOGLE_AQUI",
+  "app_signature": "TU_FIRMA_SHA256_AQUI",
+
   "payment_config": {
     "wallet_address": "TU_DIRECCION_TRON_TRC20_AQUI",
     "usdt_contract": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
