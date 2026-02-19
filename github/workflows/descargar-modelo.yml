@@ -1,23 +1,29 @@
-name: Descargar Modelo IA
-on: 
-  workflow_dispatch: # Esto activa el botón manual
+name: Descargar Modelo SmolLM2
+
+# Activación manual mediante botón
+on:
+  workflow_dispatch:
 
 jobs:
   download:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Necesario para crear el Release
+    
     steps:
+      # 1. Descargar el archivo directamente desde Hugging Face
       - name: Descargar desde Hugging Face
         run: |
-          curl -L https://huggingface.co/prithivMLmods/SmolLM2-135M-F32-GGUF/resolve/main/SmolLM2-135M-Instruct.Q3_K_S.gguf
-      
+          echo "Descargando modelo SmolLM2..."
+          wget -O modelo.gguf "https://huggingface.co/prithivMLmods/SmolLM2-135M-F32-GGUF/resolve/main/SmolLM2-135M-Instruct.Q3_K_S.gguf"
+          echo "Descarga completada."
+          ls -lh modelo.gguf
+
+      # 2. Crear un Release y subir el modelo
       - name: Crear Release y Subir Modelo
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v1.1-modelos
+          tag_name: v1.0.${{ github.run_number }}  # Crea una etiqueta versión única (ej: v1.0.15)
+          name: Release Modelo SmolLM2 ${{ github.run_number }}
+          body: "Modelo SmolLM2-135M-Instruct.Q3_K_S descargado automáticamente desde Hugging Face."
           files: modelo.gguf
-          name: "Lanzamiento de Modelos IA"
-          body: "Modelo SmolLM2-135M listo para descargar."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
