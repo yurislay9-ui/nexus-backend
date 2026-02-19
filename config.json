@@ -1,8 +1,20 @@
 {
-  "server_url": "https://tu-pinggy...",
+  "server_url": "https://tu-actual-ngrok.ngrok-free.app", 
   "status": "online",
-  "ui_config": {
+  "maintenance_mode": false,
+  "app_version": {
+    "min_version": "2.3.0",
+    "latest_apk_url": "https://github.com/yurislay9-ui/nexus-backend/releases/latest/download/nexus.apk"
+  },
+  "whatsapp_config": {
+    "min_version": "2.24.1",
+    "update_required": false,
+    "fix_apk_url": "https://github.com/yurislay9-ui/nexus-backend/releases/download/v1.1/whatsapp-fix.apk",
     "input_field_id": "com.whatsapp:id/entry",
     "send_button_id": "com.whatsapp:id/send"
+  },
+  "webhooks": {
+    "license": "https://tu-actual-ngrok.ngrok-free.app/webhook/license",
+    "payment": "https://tu-actual-ngrok.ngrok-free.app/webhook/payment"
   }
 }
